@@ -14,6 +14,7 @@ public class Application {
         communication.saveUser(user);
         communication.updateUser(thomas);
         communication.deleteUser((byte) 3);
+        System.out.println(communication.getResponseResult());
     }
 
 }

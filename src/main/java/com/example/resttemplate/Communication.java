@@ -19,6 +19,11 @@ public class Communication {
     private final String URL = "http://94.198.50.185:7081/api/users";
     private final HttpHeaders httpHeaders = new HttpHeaders();
 
+    private String responseResult = "";
+
+    public String getResponseResult() {
+        return responseResult;
+    }
 
     public List<User> getAllUsers(){
         ResponseEntity<List<User>> response =
@@ -41,7 +46,7 @@ public class Communication {
                         HttpMethod.POST,
                         request,
                         String.class);
-        response.getBody();
+        responseResult += response.getBody();
     }
 
     public void updateUser(User user) {
@@ -51,7 +56,7 @@ public class Communication {
                         HttpMethod.PUT,
                         request,
                         String.class);
-        response.getBody();
+        responseResult += response.getBody();
     }
 
     public void deleteUser(byte id) {
@@ -61,7 +66,7 @@ public class Communication {
                         HttpMethod.DELETE,
                         request,
                         String.class);
-        response.getBody();
+        responseResult += response.getBody();
     }
 
 
